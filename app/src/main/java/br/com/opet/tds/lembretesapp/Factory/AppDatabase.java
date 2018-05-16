@@ -13,16 +13,16 @@ import br.com.opet.tds.lembretesapp.Model.Nota;
  */
 
 /*@Database indica que esta classe dá acesso aos recursos de banco de dados do aplicativo*/
-@Database(entities = {Nota.class}, version = 3)
+@Database(entities = {Nota.class}, version = 4)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract NotaDAO notaDAO();
     private static AppDatabase INSTANCE;
 
 
-    public static AppDatabase getDatabase(final Context context) {
+    public static AppDatabase getDatabase(Context context) {
         if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            AppDatabase.class, "nota_db").fallbackToDestructiveMigration()
+                            AppDatabase.class, "nota_db").fallbackToDestructiveMigration().allowMainThreadQueries()
                             .build();
         }
         return INSTANCE;

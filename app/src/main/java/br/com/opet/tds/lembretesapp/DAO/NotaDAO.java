@@ -1,5 +1,6 @@
 package br.com.opet.tds.lembretesapp.DAO;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -20,7 +21,7 @@ import br.com.opet.tds.lembretesapp.Model.Nota;
 public interface NotaDAO {
 
     @Query("SELECT * from Nota")
-    List<Nota> getAll();
+    LiveData<List<Nota>> getAll();
 
     @Query("SELECT * from Nota WHERE ID in (:notasID)")
     List<Nota> loadNotasByIds(int[] notasID);

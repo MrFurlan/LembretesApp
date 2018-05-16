@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">LembretesApp</string>
+    <string name="checkLembrarNota">Lembrar?</string>
+    <string name="btnSalvarNota">Salvar</string>
+    <string name="hintTituloNota">Titulo da Nota</string>
+    <string name="hintTextoNota">Descrição</string>
+    <string name="hintDataNota">Data da Nota</string>
+
+    <string-array name="array_prioridades">
+        <item>Alta</item>
+        <item>Media</item>
+        <item>Baixa</item>
+    </string-array>
 </resources>
