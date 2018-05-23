@@ -23,6 +23,9 @@ public interface NotaDAO {
     @Query("SELECT * from Nota")
     LiveData<List<Nota>> getAll();
 
+    @Query("SELECT * from Nota")
+    List<Nota> getAllWithoutLiveData();
+
     @Query("SELECT * from Nota WHERE ID in (:notasID)")
     List<Nota> loadNotasByIds(int[] notasID);
 
@@ -37,6 +40,9 @@ public interface NotaDAO {
 
     @Delete
     int delete(Nota nota);
+
+    @Query("DELETE from Nota")
+    void deleteAll();
 
     @Update
     int update(Nota nota);
